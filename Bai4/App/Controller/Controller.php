@@ -1,7 +1,7 @@
 <?php 
-include '../Model/Model.php';
+include 'App/Model/Model.php';
 
 $events = get_events();
 
-include '../Views/views.php';
+include 'App/Views/views.php';
 ?>

@@ -1,8 +1,8 @@
 <?php 
-include '../Model/Model.php';
+include 'App/Model/Model.php';
 
 $email = $_POST['email'] ?? '';
 $user = get_user($email);
 
-include '../Views/views.php';
+include 'App/Views/views.php';
 ?>

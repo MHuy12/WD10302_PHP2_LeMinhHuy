@@ -1,7 +1,7 @@
 <?php 
 
 function get_user($email) {
-    include '../Config/config.php';
+    include 'App/Config/config.php';
     $sql = "SELECT * FROM users WHERE email = ? ";
     $stmt = $connection->prepare($sql);
     $stmt->bind_param("s", $email);

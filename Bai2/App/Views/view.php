@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +22,7 @@
         <button type="submit">Tìm khóa học</button>
     </form>
 
-   
+
 </body>
 
 </html>

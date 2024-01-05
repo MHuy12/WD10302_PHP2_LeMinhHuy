@@ -1,7 +1,7 @@
 <?php
 function get_events()
 {
-    include '../Config/config.php';
+    include 'App/Config/config.php';
 
     $sql = "SELECT * FROM events";
     $stmt = $connection->prepare($sql);
