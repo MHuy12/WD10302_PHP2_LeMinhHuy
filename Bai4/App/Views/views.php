@@ -14,6 +14,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>ID Khach Hang</th>
                 <th>Tiêu Đề</th>
                 <th>Mô Tả</th>
                 <th>Thời Gian Bắt Đầu</th>
@@ -26,6 +27,9 @@
                 <tr>
                     <td>
                         <?= $event['id'] ?>
+                    </td>
+                    <td>
+                        <?= $event['id_users'] ?>
                     </td>
                     <td>
                         <?= $event['title'] ?>
