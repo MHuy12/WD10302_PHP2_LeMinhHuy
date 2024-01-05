@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<h1 style="text-align: center;">Bảng quản lí sự kiện</h1>
     <table>
         <thead>
             <tr>
@@ -39,7 +39,7 @@
                     <td>
                         <?= $event['end_time'] ?>
                     </td>
-                    <td><a href="#">Xem Chi Tiết</a></td>
+                    <td><a href="" style="text-decoration: none;">Xem Chi Tiết</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
