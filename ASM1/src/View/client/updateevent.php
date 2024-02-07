@@ -188,36 +188,36 @@
     <div class="col-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Edit Event</h4>
+          <h4 class="card-title">Chỉnh sự sự kiện</h4>
           <p class="card-description">
-            Edit event information here
+            Chỉnh sửa thông tin sự kiện
           </p>
           <form class="forms-sample">
             <div class="form-group">
-              <label for="editEventTitle">Event Title</label>
+              <label for="editEventTitle">Tiêu đề</label>
               <input type="text" class="form-control" id="editEventTitle" placeholder="Title" value="Current Title">
             </div>
             <div class="form-group">
-              <label for="editEventDate">Event Date</label>
+              <label for="editEventDate">Ngày tổ chức</label>
               <input type="date" class="form-control" id="editEventDate" value="Current Date">
             </div>
             <div class="form-group">
-              <label for="editEventLocation">Event Location</label>
+              <label for="editEventLocation">Địa điểm</label>
               <input type="text" class="form-control" id="editEventLocation" placeholder="Event Location"
                 value="Current Location">
             </div>
             <div class="form-group">
-              <label for="editEventDescription">Event Description</label>
+              <label for="editEventDescription">Mô tả</label>
               <textarea class="form-control" id="editEventDescription" rows="4"
                 placeholder="Description of the event">Current Description</textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary mr-2">Save Changes</button>
-            <a href="index.php?act=event"><button class="btn btn-light">Cancel</button></a>
+            <button type="submit" class="btn btn-primary mr-2">Lưu</button>
+            <a href="?url=EventsController" style="text-decoration: none">Hủy</a>
           </form>
         </div>
       </div>
     </div>
     </div>
-    </div>
-    </div>
+    
+    

@@ -5,7 +5,7 @@ namespace src\Core;
 class Route
 {
     public $url;
-    public $nameController = "HomeController";
+    public $nameController = "LoginController";
     public $nameMethod = "home";
     public $path = 'src/Controllers/';
     public $controller;
@@ -36,7 +36,7 @@ class Route
             $className = $this->path . $this->nameController;
             $className = preg_replace("~\/~", "\\", $className);
             $this->controller = new $className;
-            $this->controller->HomeController();
+            $this->controller->LoginController();
         } else {
             $this->nameController = $this->url[0];
             $file = __DIR__ . '/../Controllers/' . $this->nameController . '.php';

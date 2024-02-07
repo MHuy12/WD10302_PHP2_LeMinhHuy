@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="src/Public/img/logo/logo.png" rel="icon">
-  <title>Admin - Dashboard</title>
+  <title>Quản lí sự kiện</title>
   <link href="src/Public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="src/Public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="src/Public/css/ruang-admin.min.css" rel="stylesheet">

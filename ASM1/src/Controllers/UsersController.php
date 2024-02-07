@@ -4,7 +4,7 @@ namespace src\Controllers;
 
 use src\Core\RenderBase;
 
-class HomeController extends BaseController
+class UsersController extends BaseController
 {
 
     private $_renderBase;
@@ -13,27 +13,21 @@ class HomeController extends BaseController
     {
         parent::__construct();
         $this->_renderBase = new RenderBase();
-        $this->HomeController();
+        $this->Users();
     }
 
-    function HomeController()
+    function Users()
     {
-        $this->homePage();
-        
+        $this->usersPage();
     }
 
-    function homePage()
+    function usersPage()
     {
-
-
         $this->_renderBase->renderHeader();
         $this->_renderBase->renderNav();
-        $this->load->render('client/home'); 
-        
+        $this->load->render('client/users');
         $this->_renderBase->renderFooter();
     }
-    
 
     
-   
 }

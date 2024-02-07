@@ -3,8 +3,9 @@
 namespace src\Controllers;
 
 use src\Core\RenderBase;
+use src\Models\EventsModel;
 
-class HomeController extends BaseController
+class EventsController extends BaseController
 {
 
     private $_renderBase;
@@ -13,27 +14,24 @@ class HomeController extends BaseController
     {
         parent::__construct();
         $this->_renderBase = new RenderBase();
-        $this->HomeController();
+        $this->Events();
+
     }
 
-    function HomeController()
+    function Events()
     {
-        $this->homePage();
-        
+        $this->eventPage();
+   
     }
 
-    function homePage()
+    function eventPage()
     {
-
-
+        $eventsModel = new EventsModel;
+        $events = $eventsModel->getAllEvents();
         $this->_renderBase->renderHeader();
         $this->_renderBase->renderNav();
-        $this->load->render('client/home'); 
-        
+        $this->load->render('client/events', $events);
         $this->_renderBase->renderFooter();
-    }
-    
 
-    
-   
+    }
 }

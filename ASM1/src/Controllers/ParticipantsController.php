@@ -4,7 +4,7 @@ namespace src\Controllers;
 
 use src\Core\RenderBase;
 
-class Participants extends BaseController
+class ParticipantsController extends BaseController
 {
 
     private $_renderBase;

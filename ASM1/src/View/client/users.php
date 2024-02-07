@@ -198,10 +198,10 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th>UserID</th>
-                <th>Name</th>
+                <th>ID Người dùng</th>
+                <th>Tên Người dùng</th>
                 <th>Email</th>
-                <th>Role</th>
+                
               </tr>
             </thead>
             <tbody>

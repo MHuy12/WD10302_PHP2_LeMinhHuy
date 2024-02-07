@@ -189,36 +189,33 @@
     <div class="col-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Add Event</h4>
+          <h4 class="card-title">Thêm sự kiện</h4>
           <p class="card-description">
-            Enter event information here
+            Thông tin sự kiện
           </p>
           <form class="forms-sample">
             <div class="form-group">
-              <label for="eventTitle">Event Title</label>
+              <label for="eventTitle">Tiêu đề</label>
               <input type="text" class="form-control" id="eventTitle" placeholder="Title">
             </div>
             <div class="form-group">
-              <label for="eventDate">Event Date</label>
+              <label for="eventDate">Ngày tổ chức</label>
               <input type="date" class="form-control" id="eventDate">
             </div>
             <div class="form-group">
-              <label for="eventLocation">Location</label>
+              <label for="eventLocation">Địa điểm</label>
               <input type="text" class="form-control" id="eventLocation" placeholder="Event location">
             </div>
             <div class="form-group">
-              <label for="eventDescription">Event Description</label>
+              <label for="eventDescription">Mô tả</label>
               <textarea class="form-control" id="eventDescription" rows="4"
                 placeholder="Description about the event"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary mr-2">Add Event</button>
-            <a href="index.php?act=event"><button class="btn btn-light">Cancel</button></a>
+            <button type="submit" class="btn btn-primary mr-2">Thêm</button>
+            <a href="?url=EventsController" style="text-decoration: none">Hủy</a>
           </form>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>

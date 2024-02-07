@@ -4,7 +4,7 @@ namespace src\Controllers;
 
 use src\Core\RenderBase;
 
-class Events extends BaseController
+class AddEventsController extends BaseController
 {
 
     private $_renderBase;
@@ -13,21 +13,25 @@ class Events extends BaseController
     {
         parent::__construct();
         $this->_renderBase = new RenderBase();
-        $this->Events();
+        $this->addEvent();
+        
     }
 
-    function Events()
+    function addEvent()
     {
-        $this->eventPage();
+        $this->addEventPage();
+        
     }
 
-    function eventPage()
-    {
+    public function addEventPage()
+    {   
+        
         $this->_renderBase->renderHeader();
         $this->_renderBase->renderNav();
-        $this->load->render('client/events');
+        $this->load->render('client/addevents');
         $this->_renderBase->renderFooter();
     }
 
-    
+   
 }
+

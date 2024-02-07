@@ -4,7 +4,7 @@ namespace src\Controllers;
 
 use src\Core\RenderBase;
 
-class Users extends BaseController
+class UpdateEventsController extends BaseController
 {
 
     private $_renderBase;
@@ -13,21 +13,24 @@ class Users extends BaseController
     {
         parent::__construct();
         $this->_renderBase = new RenderBase();
-        $this->Users();
+        $this->updateEvent();
+        
     }
 
-    function Users()
+    function updateEvent()
     {
-        $this->usersPage();
+        $this->updateEventPage();
+        
     }
 
-    function usersPage()
-    {
+    public function updateEventPage()
+    {   
+        
         $this->_renderBase->renderHeader();
         $this->_renderBase->renderNav();
-        $this->load->render('client/users');
+        $this->load->render('client/updateevent');
         $this->_renderBase->renderFooter();
     }
 
-    
+   
 }

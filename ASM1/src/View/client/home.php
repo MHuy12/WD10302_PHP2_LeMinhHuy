@@ -191,10 +191,10 @@
     <!-- Container Fluid-->
     <div class="container-fluid" id="container-wrapper">
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">Bảng điều khiển</h1>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+          <li class="breadcrumb-item"><a href="./">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Bảng điều khiển</li>
         </ol>
       </div>
 
@@ -206,11 +206,11 @@
             <div class="card-body">
               <div class="row align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-uppercase mb-1">Monthly Events</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">Event Count</div>
+                  <div class="text-xs font-weight-bold text-uppercase mb-1">Sự kiện trong tháng</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">Tổng sự kiện</div>
                   <div class="mt-2 mb-0 text-muted text-xs">
                     <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 10%</span>
-                    <span>Since last month</span>
+                    <span>Tháng trước</span>
                   </div>
                 </div>
                 <div class="col-auto">
@@ -226,11 +226,11 @@
             <div class="card-body">
               <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-uppercase mb-1">Sales Revenue</div>
+                  <div class="text-xs font-weight-bold text-uppercase mb-1">Doanh thu</div>
                   <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
                   <div class="mt-2 mb-0 text-muted text-xs">
                     <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                    <span>Since last year</span>
+                    <span>Năm trước</span>
                   </div>
                 </div>
                 <div class="col-auto">

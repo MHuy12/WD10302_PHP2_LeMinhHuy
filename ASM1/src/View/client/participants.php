@@ -197,7 +197,7 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th>AttendeeID</th>
+                    <th>ID Người tham dự</th>
                     <th>EventID</th>
                     <th>Name</th>
                     <th>Email</th>

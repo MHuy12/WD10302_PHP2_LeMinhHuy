@@ -188,58 +188,58 @@
 
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Event Management</h1>
-                <a href="index.php?act=addEvent" class="btn btn-primary">Add New Event</a>
-            </div>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Quản lí sự kiện</h1>
+        <a href="?url=AddEventsController" class="btn btn-primary">Thêm sự kiện</a>
+    </div>
 
-            <div class="row">
-                <div class="col-lg-12 mb-4">
-                    <!-- Event Table -->
-                    <div class="card">
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Event List</h6>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center table-flush">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th>Event ID</th>
-                                        <th>Event Name</th>
-                                        <th>Event Date</th>
-                                        <th>Location</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="#">1</a></td>
-                                        <td>Conference</td>
-                                        <td>2024-02-15</td>
-                                        <td>City Hall</td>
-
-                                        <td><a href="index.php?act=updateEvent" class="btn btn-sm btn-primary">Edit</a>
-                                        </td>
-                                        <td><a href="" class="btn btn-sm btn-danger">Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">2</a></td>
-                                        <td>Workshop</td>
-                                        <td>2024-03-10</td>
-                                        <td>Community Center</td>
-                                        <td width="60px"><a href="index.php?act=updateEvent"
-                                                class="btn btn-sm btn-primary">Edit</a></td>
-                                        <td><a href="" class="btn btn-sm btn-danger">Delete</a></td>
-                                    </tr>
-                                    <!-- Add more rows as needed -->
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="card-footer"></div>
-                    </div>
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <!-- Event Table -->
+            <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách sự kiện</h6>
                 </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>ID Sự kiện</th>
+                                <th>Tên sự kiện</th>
+                                <th>Mô tả</th>
+                                <th>Địa điểm</th>
+                                <th>Trạng thái</th>
+                                <th>Ngày tổ chức</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <?php foreach ($data as $item) {
+                        extract($item); ?>
+                        <tbody>
+                            <tr>
+                                <td><a href="#"><?= $id ?></a></td>
+                                <td><?= $title ?></td>
+                                <td><?= $description ?></td>
+                                <td><?= $location ?></td>
+                                <td>
+                                <?= $event_status ?>
+                                </td>
+                                <td><?= $event_date ?></td>
+                                <td><a href="?url=UpdateEventsController" class="btn btn-sm btn-primary">Chỉnh sửa</a></td>
+                                <td><a href="" class="btn btn-sm btn-danger">Xóa</a></td>
+                            </tr>
+                            
+                        </tbody>
+                        <?php
+                    } ?>
+                    </table>
+                </div>
+                <div class="card-footer"></div>
             </div>
-            <!--Row-->
         </div>
+    </div>
+    <!--Row-->
+</div>
+
     </div>

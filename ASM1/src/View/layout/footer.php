@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
 </head>
 <body>
 <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>copyright MHuy <script> document.write(new Date().getFullYear()); </script> - developed by
+            <span>bản quyền thuộc về MHuy <script> document.write(new Date().getFullYear()); </script> - phát triển bởi
               <b><a href="" target="_blank">MHuy </a></b>
             </span>
           </div>
         </div>
 
-        <div class="container my-auto py-2">
-          <div class="copyright text-center my-auto">
-            <span>copyright MHuy  <script> document.write(new Date().getFullYear()); </script> - distributed by
-              <b><a href="" target="_blank">MHuy </a></b>
-            </span>
-          </div>
-        </div>
+       
       </footer>
       <!-- Footer -->
     </div>
