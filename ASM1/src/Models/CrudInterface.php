@@ -25,5 +25,5 @@ interface CrudInterface{
 
     public function update(int $id, array $data);
 
-    public function remove(int $id): bool;
+    public function remove(int $id);
 }

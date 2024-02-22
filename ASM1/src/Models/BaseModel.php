@@ -17,6 +17,7 @@ abstract class BaseModel implements CrudInterface
 
     protected $name = "BaseModel";
     private $_query;
+    protected $table;
 
     public function __construct()
     {
@@ -49,15 +50,22 @@ abstract class BaseModel implements CrudInterface
     }
 
 
-    public function getOne($id)
+    public function getOne(int $id)
     {
-        return [];
+        $this->_query = "SELECT * FROM $this->table WHERE id=$id";
+
+        $stmt = $this->_connection->PdO()->prepare($this->_query);
+
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 
     public function limit(int $limit = 10)
     {
-        $stmt   = $this->_connection->PDO()->prepare($this->_query);
+        $stmt = $this->_connection->PDO()->prepare($this->_query);
         $result = $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -65,30 +73,46 @@ abstract class BaseModel implements CrudInterface
 
     public function update(int $id, array $data)
     {
+        $this->_query = "UPDATE $this->table SET ";
+        foreach ($data as $key => $value) {
+            $this->_query .= "$key = '$value', ";
+        }
+        $this->_query = rtrim($this->_query, ", ");
+
+        $this->_query .= " WHERE id=$id";
+        $stmt = $this->_connection->PdO()->prepare($this->_query);
+        return $stmt->execute();
+
     }
-    public function remove(int $id): bool
+    public function remove(int $id)
     {
-        return true;
+        $this->_query = "DELETE FROM $this->table WHERE id=$id";
+        $stmt = $this->_connection->PdO()->prepare($this->_query);
+
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
- 
+
 
     public function insertData($table, $data)
     {
 
         if (!empty($data)) {
-            
-            $fielStr  = '';
+
+            $fielStr = '';
             $valueStr = '';
             foreach ($data as $key => $value) {
                 $fielStr .= $key . ',';
                 $valueStr .= "'" . $value . "',";
             }
 
-            $fielStr  = rtrim($fielStr, ',');
+            $fielStr = rtrim($fielStr, ',');
             $valueStr = rtrim($valueStr, ',');
-            $sql      = "INSERT INTO  $table($fielStr) VALUES ($valueStr)";
-         
+            $sql = "INSERT INTO  $table($fielStr) VALUES ($valueStr)";
+
             $status = $this->query($sql);
             if (!$status)
                 return false;
@@ -110,7 +134,7 @@ abstract class BaseModel implements CrudInterface
                 }
             }
             $updateStr = rtrim($updateStr, ',');
-            $sql       = "UPDATE $table SET $updateStr";
+            $sql = "UPDATE $table SET $updateStr";
             if (!empty($condition)) {
                 $sql = "UPDATE $table SET $updateStr WHERE $condition";
             }

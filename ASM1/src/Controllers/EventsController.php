@@ -21,7 +21,7 @@ class EventsController extends BaseController
     function Events()
     {
         $this->eventPage();
-   
+
     }
 
     function eventPage()
@@ -34,4 +34,16 @@ class EventsController extends BaseController
         $this->_renderBase->renderFooter();
 
     }
+
+    public function deleteEvent($id)
+    {
+        $delete = new EventsModel;
+        $deleteEvent = $delete->remove($id);
+        if ($deleteEvent) {
+            header('Location: /?url=EventsController');
+            exit();
+        }
+    }
 }
+
+

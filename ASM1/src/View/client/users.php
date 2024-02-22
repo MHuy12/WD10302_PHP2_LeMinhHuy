@@ -199,27 +199,22 @@
             <thead class="thead-light">
               <tr>
                 <th>ID Người dùng</th>
-                <th>Tên Người dùng</th>
                 <th>Email</th>
-                
+                <th>Tên Người dùng</th>
               </tr>
             </thead>
+            <?php foreach ($data as $item) {
+                        extract($item); ?>
             <tbody>
-              <!-- Dòng và cột dữ liệu người dùng sẽ được thêm vào đây -->
               <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>john.doe@example.com</td>
-                <td>User</td>
+                <td><?= $id ?></td>
+                <td><?= $email ?></td>
+                <td><?= $name ?></td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Jane Smith</td>
-                <td>jane.smith@example.com</td>
-                <td>User</td>
-              </tr>
-              <!-- ... Thêm các dòng và cột khác tùy theo số lượng người dùng -->
+
             </tbody>
+            <?php
+                    } ?>
           </table>
         </div>
         <div class="card-footer"></div>

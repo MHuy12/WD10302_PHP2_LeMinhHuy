@@ -4,7 +4,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
         <div class="sidebar-brand-icon">
-          <img src="src/Public/img/z5075000695449_3d768809189f1e0266c4c1a872040bf0.jpg" style="width: 1000 px;">
+          <img src="src/Public/img/z5176823932556_b96189e492fd553cfc130c40aa5551fe.jpg" style="width: 3000 px;">
         </div>
         <div class="sidebar-brand-text mx-3">Quản lí sự kiện</div>
       </a>

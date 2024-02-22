@@ -192,32 +192,60 @@
           <p class="card-description">
             Chỉnh sửa thông tin sự kiện
           </p>
-          <form class="forms-sample">
+          <form action="?url=UpdateEventsController/handleUpdateevent/<?= $id ?>" method="POST" class="forms-sample">
+
             <div class="form-group">
-              <label for="editEventTitle">Tiêu đề</label>
-              <input type="text" class="form-control" id="editEventTitle" placeholder="Title" value="Current Title">
-            </div>
-            <div class="form-group">
-              <label for="editEventDate">Ngày tổ chức</label>
-              <input type="date" class="form-control" id="editEventDate" value="Current Date">
-            </div>
-            <div class="form-group">
-              <label for="editEventLocation">Địa điểm</label>
-              <input type="text" class="form-control" id="editEventLocation" placeholder="Event Location"
-                value="Current Location">
-            </div>
-            <div class="form-group">
-              <label for="editEventDescription">Mô tả</label>
-              <textarea class="form-control" id="editEventDescription" rows="4"
-                placeholder="Description of the event">Current Description</textarea>
+              <label for="eventTitle">Tiêu đề</label>
+              <?php echo (isset($_SESSION['validation_errors']['title']) ? '<div class="text-danger">' . $_SESSION['validation_errors']['title'] . '</div>' : ''); ?>
+              <input type="text" name="title" class="form-control" id="eventTitle" placeholder="Title"
+                value="<?= $data['title'] ?>">
             </div>
 
-            <button type="submit" class="btn btn-primary mr-2">Lưu</button>
-            <a href="?url=EventsController" style="text-decoration: none">Hủy</a>
+            <div class="form-group">
+              <label for="eventDate">Ngày tổ chức</label>
+              <?php echo (isset($_SESSION['validation_errors']['event_date']) ? '<div class="text-danger">' . $_SESSION['validation_errors']['event_date'] . '</div>' : ''); ?>
+              <input type="date" name="event_date" class="form-control" id="eventDate"
+                value="<?= $data['event_date'] ?>">
+
+
+              <div class="form-group">
+                <label for="eventLocation">Địa điểm</label>
+                <?php echo (isset($_SESSION['validation_errors']['location']) ? '<div class="text-danger">' . $_SESSION['validation_errors']['location'] . '</div>' : ''); ?>
+                <input type="text" name="location" class="form-control" id="eventLocation" placeholder="Event location"
+                  value="<?= $data['location'] ?>">
+              </div>
+              <div class="form-group">
+                <label for="eventStatus">Trạng thái</label>
+                <select class="form-control" name="event_status" id="eventStatus">
+                  <option value="1" <?= ($data['event_status'] == 1) ? 'selected' : '' ?>>Lên kế hoạch</option>
+                  <option value="2" <?= ($data['event_status'] == 2) ? 'selected' : '' ?>>Đã hoàn thành</option>
+                  <option value="3" <?= ($data['event_status'] == 3) ? 'selected' : '' ?>>Trong quá trình</option>
+
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="eventDescription">Mô tả</label>
+                <?php echo (isset($_SESSION['validation_errors']['description']) ? '<div class="text-danger">' . $_SESSION['validation_errors']['description'] . '</div>' : ''); ?>
+                <textarea class="form-control" name="description" id="eventDescription" rows="4"
+                  placeholder="Description about the event"><?= $data['description'] ?></textarea>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary mr-2">Lưu</button>
+              <a href="?url=EventsController" style="text-decoration: none">Hủy</a>
+              <?php if (!empty($registration_success_message)): ?>
+                <div class="alert alert-success" role="alert">
+                  <?php echo $registration_success_message; ?>
+                </div>
+              <?php endif; ?>
+              <?php
+              // Clear validation errors after displaying them
+              $_SESSION['validation_errors'] = [];
+              ?>
           </form>
         </div>
       </div>
     </div>
-    </div>
-    
-    
+  </div>

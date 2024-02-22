@@ -198,20 +198,23 @@
                 <thead class="thead-light">
                   <tr>
                     <th>ID Người tham dự</th>
-                    <th>EventID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                    <th>ID Sự Kiện</th>
+                    <th>ID Người Dùng</th>
+                    <th>Tên Người dùng</th>
+                    <th>Ngày đăng ký</th>
                   </tr>
                   <tr>
-
+                  <?php foreach ($data as $item) {
+                        extract($item); ?>
                   <tr>
-                    <td>2</td>
-                    <td>EVENT002</td>
-                    <td>Tran Thi B</td>
-                    <td>tranthib@example.com</td>
-                    <td>Organizer</td>
+                    <td><?= $participant_id ?></td>
+                    <td><?= $event_id ?></td>
+                    <td><?= $user_id  ?></td>
+                    <td><?= $full_name ?></td>
+                    <td><?= $registration_date  ?></td>
                   </tr>
+                  <?php
+                    } ?>
                 </thead>
                 <tbody>
                   <!-- Dòng và cột dữ liệu người tham gia sẽ được thêm vào đây -->

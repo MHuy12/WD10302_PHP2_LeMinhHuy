@@ -77,7 +77,7 @@
                   Ghi nhớ tôi
                 </label>
               </div>
-              <a href="#!" class="text-body">Quên mật khẩu?</a>
+              <a href="?url=ForgotPassController/ForgotPass" class="text-body">Quên mật khẩu?</a>
             </div>
 
 
@@ -98,8 +98,9 @@
 
         </div>
       </div>
-    </div>
-
+    
+      </div>
+      </div>
 
   </section>
 </body>

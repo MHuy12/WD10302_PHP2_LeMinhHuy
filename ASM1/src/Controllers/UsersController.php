@@ -3,6 +3,7 @@
 namespace src\Controllers;
 
 use src\Core\RenderBase;
+use src\Models\UserModel;
 
 class UsersController extends BaseController
 {
@@ -23,11 +24,13 @@ class UsersController extends BaseController
 
     function usersPage()
     {
+        $userModel = new UserModel;
+        $user = $userModel->getAllUser();
         $this->_renderBase->renderHeader();
         $this->_renderBase->renderNav();
-        $this->load->render('client/users');
+        $this->load->render('client/users', $user);
         $this->_renderBase->renderFooter();
     }
 
-    
+
 }

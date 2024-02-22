@@ -1,6 +1,6 @@
 <div id="content-wrapper" class="d-flex flex-column">
-    <div id="content">
-        
+  <div id="content">
+
     <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
       <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
         <i class="fa fa-bars"></i>
@@ -186,60 +186,100 @@
       </ul>
     </nav>
 
-        <!-- Container Fluid-->
-        <div class="container-fluid" id="container-wrapper">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <!-- Container Fluid-->
+    <div class="container-fluid" id="container-wrapper">
+      <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Quản lí sự kiện</h1>
         <a href="?url=AddEventsController" class="btn btn-primary">Thêm sự kiện</a>
-    </div>
+      </div>
 
-    <div class="row">
+      <div class="row">
         <div class="col-lg-12 mb-4">
-            <!-- Event Table -->
-            <div class="card">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Danh sách sự kiện</h6>
-                </div>
-                <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>ID Sự kiện</th>
-                                <th>Tên sự kiện</th>
-                                <th>Mô tả</th>
-                                <th>Địa điểm</th>
-                                <th>Trạng thái</th>
-                                <th>Ngày tổ chức</th>
-                                <th>Sửa</th>
-                                <th>Xóa</th>
-                            </tr>
-                        </thead>
-                        <?php foreach ($data as $item) {
-                        extract($item); ?>
-                        <tbody>
-                            <tr>
-                                <td><a href="#"><?= $id ?></a></td>
-                                <td><?= $title ?></td>
-                                <td><?= $description ?></td>
-                                <td><?= $location ?></td>
-                                <td>
-                                <?= $event_status ?>
-                                </td>
-                                <td><?= $event_date ?></td>
-                                <td><a href="?url=UpdateEventsController" class="btn btn-sm btn-primary">Chỉnh sửa</a></td>
-                                <td><a href="" class="btn btn-sm btn-danger">Xóa</a></td>
-                            </tr>
-                            
-                        </tbody>
-                        <?php
-                    } ?>
-                    </table>
-                </div>
-                <div class="card-footer"></div>
+          <!-- Event Table -->
+          <div class="card">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Danh sách sự kiện</h6>
             </div>
-        </div>
-    </div>
-    <!--Row-->
-</div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th>ID Sự kiện</th>
+                    <th>Tên sự kiện</th>
+                    <th>Mô tả</th>
+                    <th>Địa điểm</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày tổ chức</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
+                  </tr>
+                </thead>
+                <?php foreach ($data as $item) {
+                  extract($item); ?>
+                  <tbody>
+                    <tr>
+                      <td><a href="#">
+                          <?= $id ?>
+                        </a></td>
+                      <td>
+                        <?= $title ?>
+                      </td>
+                      <td>
+                        <?= $description ?>
+                      </td>
+                      <td>
+                        <?= $location ?>
+                      </td>
+                      <td>
+                        <?= $event_status ?>
+                      </td>
+                      <td>
+                        <?= $event_date ?>
+                      </td>
+                      <td><a href="?url=UpdateEventsController/updateEvent/<?= $id ?>"
+                          class="btn btn-sm btn-primary">Chỉnh sửa</a></td>
+                      <td><a href="#" class="btn btn-sm btn-danger"
+                          onclick="confirmDelete('?url=EventsController/deleteEvent/<?= $id ?>')">Xóa</a></td>
 
+                    </tr>
+
+                  </tbody>
+                  <?php
+                } ?>
+              </table>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      </div>
+      <!--Row-->
     </div>
+
+  </div>
+  <script>
+
+    function confirmDelete(url) {
+      var r = confirm("Bạn có chắc chắn muốn xóa?");
+      if (r == true) {
+        // Send an asynchronous request to delete the item
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            // Successful deletion
+
+            window.location.reload(); // You can also redirect or update the page as needed
+          } else {
+            // Failed deletion
+
+            window.location.reload();
+          }
+        };
+
+        xhr.send();
+      } else {
+        alert("Xóa đã bị hủy bỏ.");
+      }
+    }
+  </script>
